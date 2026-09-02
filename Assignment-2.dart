@@ -45,3 +45,42 @@ while (keepRunning) {
       print("Invalid temperature. Please enter a valid number.");
       continue;
     }
+    double result = 0.0;
+    
+    // Improved output by formatting numbers properly (removing unnecessary decimals)
+    String tempStr = temp == temp.toInt() ? temp.toInt().toString() : temp.toString();
+    String resultStr = "";
+
+    switch (choice) {
+      case 1:
+        result = (temp * 9 / 5) + 32;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr°C = $resultStr°F");
+        break;
+      case 2:
+        result = (temp - 32) * 5 / 9;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr°F = $resultStr°C");
+        break;
+      case 3:
+        result = temp + 273.15;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr°C = $resultStr K");
+        break;
+      case 4:
+        result = temp - 273.15;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr K = $resultStr°C");
+        break;
+      case 5:
+        result = (temp - 32) * 5 / 9 + 273.15;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr°F = $resultStr K");
+        break;
+      case 6:
+        result = (temp - 273.15) * 9 / 5 + 32;
+        resultStr = result == result.toInt() ? result.toInt().toString() : result.toStringAsFixed(2);
+        print("$tempStr K = $resultStr°F");
+        break;
+    }
+
