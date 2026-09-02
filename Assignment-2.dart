@@ -83,4 +83,16 @@ while (keepRunning) {
         print("$tempStr K = $resultStr°F");
         break;
     }
+// Prompt for next iteration
+    stdout.write("Do you want to perform another conversion? (y/n): ");
+    String? continueInput = stdin.readLineSync();
 
+    if (continueInput != null && continueInput.toLowerCase() == 'n') {
+      keepRunning = false;
+      print("====================================");
+      print("       Thank You!");
+      print("       Program Ended");
+      print("====================================");
+    }
+  }
+}
